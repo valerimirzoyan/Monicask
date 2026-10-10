@@ -1,0 +1,22 @@
+[project]
+name = "monicask"
+version = "0.1.0"
+description = "Monicask — unified agent workplace: Zammad + FreePBX/Asterisk task and availability service"
+requires-python = ">=3.11"
+
+[tool.ruff]
+line-length = 130
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "RUF"]
+ignore = ["B008", "RUF001", "RUF002", "RUF003"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.mypy]
+python_version = "3.12"
+ignore_missing_imports = true
+warn_unused_ignores = true

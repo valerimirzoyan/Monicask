@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Рабочее место оператора</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Рабочее место оператора</div>
+    <div class="agent-picker">
+      <label for="agentId">Оператор</label>
+      <input id="agentId" type="number" min="1" value="1" />
+      <button id="connectBtn" class="btn btn-secondary">Подключиться</button>
+    </div>
+    <div class="status-wrap">
+      <span id="statePill" class="pill pill-offline">—</span>
+      <span id="syncPill" class="pill pill-muted">sync —</span>
+      <span id="agentName" class="muted"></span>
+    </div>
+  </header>
+
+  <div id="banner" class="banner hidden"></div>
+
+  <main class="grid">
+    <section class="card" id="callCard">
+      <h2>Входящий звонок</h2>
+      <div class="row">
+        <input id="callNumber" type="tel" placeholder="+373 60 123 456" />
+        <button id="lookupBtn" class="btn">Найти клиента</button>
+        <button id="simulateBtn" class="btn btn-secondary" title="dev only">Симулировать</button>
+      </div>
+      <div id="contactBox" class="contact hidden"></div>
+      <div class="row">
+        <input id="ticketSubject" type="text" placeholder="Тема тикета" />
+        <button id="createTicketBtn" class="btn">Создать тикет</button>
+      </div>
+
+      <h3>Последние звонки</h3>
+      <ul id="callsList" class="list"></ul>
+    </section>
+
+    <section class="card">
+      <h2>Мои задачи</h2>
+      <div class="controls">
+        <button id="readyBtn" class="btn btn-ok">Готов</button>
+        <button id="breakBtn" class="btn btn-warn">Перерыв</button>
+        <button id="offlineBtn" class="btn btn-muted">Отключиться</button>
+      </div>
+      <h3>Блокирующие</h3>
+      <ul id="blockingList" class="list"></ul>
+      <h3>Фоновые</h3>
+      <ul id="backgroundList" class="list"></ul>
+    </section>
+
+    <section class="card">
+      <h2>Очередь тикетов</h2>
+      <ul id="ticketsList" class="list"></ul>
+    </section>
+
+    <section class="card">
+      <h2>Последние события</h2>
+      <ul id="auditList" class="list small"></ul>
+    </section>
+  </main>
+
+  <div id="toast" class="toast hidden"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
